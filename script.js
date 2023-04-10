@@ -1,6 +1,6 @@
-var todoForm = document.getElementById('todo-form');
-var todoInput = document.getElementById('todo-input');
-var taskList = document.getElementById('task-list');
+let todoForm = document.getElementById('todo-form');
+let todoInput = document.getElementById('todo-input');
+let taskList = document.getElementById('task-list');
 
 // フォームが送信された際の処理
 todoForm.addEventListener('submit', function (e) {
@@ -11,12 +11,12 @@ todoForm.addEventListener('submit', function (e) {
 
 // タスクを追加する関数
 function addTask(taskName) {
-  var li = document.createElement('li');
+  let li = document.createElement('li');
   li.innerHTML = '<span>' + taskName + '</span><button>完了</button>';
   taskList.appendChild(li);
 
   // 完了ボタンを押された際の処理
-  var completeButton = li.querySelector('button');
+  let completeButton = li.querySelector('button');
   completeButton.addEventListener('click', function () {
     li.remove(); // タスクを削除
   });
