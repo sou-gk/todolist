@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ToDoリスト</title>
+  <style>
+    /* スタイル */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid # ccc;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: # 4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .task-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .task-list li {
+      background-color: # f2f2f2;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .task-list li span {
+      flex-grow: 1;
+    }
+
+    .task-list li button {
+      background-color: # f44336;
+      margin-left: 10px;
+    }
+
+    .task-list li button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>ToDoリスト</h1>
+  <form id="todo-form">
+    <input type="text" id="todo-input" placeholder="タスク名を入力してください">
+    <button type="submit">追加</button>
+  </form>
+  <ul id="task-list" class="task-list"></ul>
+  <script>
+    var todoForm = document.getElementById('todo-form');
+var todoInput = document.getElementById('todo-input');
+var taskList = document.getElementById('task-list');
+
+// フォームが送信された際の処理
+todoForm.addEventListener('submit', function(e) {
+e.preventDefault(); // フォームのデフォルトの送信処理を無効化
+addTask(todoInput.value); // タスクを追加する関数を呼び出し
+todoInput.value = ''; // 入力欄を空にする
+});
+
+// タスクを追加する関数
+function addTask(taskName) {
+var li = document.createElement('li');
+li.innerHTML = '<span>' + taskName + '</span><button>完了</button>';
+taskList.appendChild(li);
+
+// 完了ボタンを押された際の処理
+var completeButton = li.querySelector('button');
+completeButton.addEventListener('click', function() {
+li.remove(); // タスクを削除
+});
+}
+  </script>
+</body>
+
+</html>
