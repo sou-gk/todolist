@@ -1,0 +1,60 @@
+/* スタイル */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid # ccc;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: # 4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.task-list li {
+  background-color: # f2f2f2;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.task-list li span {
+  flex-grow: 1;
+}
+
+.task-list li button {
+  background-color: # f44336;
+  margin-left: 10px;
+}
+
+.task-list li button:hover {
+  opacity: 0.8;
+}
